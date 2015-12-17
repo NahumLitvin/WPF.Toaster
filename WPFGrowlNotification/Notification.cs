@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Media.Imaging;
 
 namespace WPFGrowlNotification
 {
@@ -31,16 +32,16 @@ namespace WPFGrowlNotification
             }
         }
 
-        private string _imageUrl;
-        public string ImageUrl
+        private BitmapImage _image;
+        public BitmapImage Image
         {
-            get { return _imageUrl; }
+            get { return _image; }
 
             set
             {
-                if (_imageUrl == value) return;
-                _imageUrl = value;
-                OnPropertyChanged("ImageUrl");
+                if (_image == value) return;
+                _image = value;
+                OnPropertyChanged("Image");
             }
         }
 
@@ -56,6 +57,7 @@ namespace WPFGrowlNotification
                 OnPropertyChanged("Title");
             }
         }
+
 
         protected virtual void OnPropertyChanged(string propertyName)
         {

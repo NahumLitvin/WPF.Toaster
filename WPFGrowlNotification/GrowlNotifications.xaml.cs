@@ -14,21 +14,26 @@ namespace WPFGrowlNotification
         public Notifications Notifications = new Notifications();
         private readonly Notifications _buffer = new Notifications();
 
-        public GrowlNotifications(NotificationLocation location)
+        public GrowlNotifications(NotificationLocation location = NotificationLocation.BottonRight)
         {
             InitializeComponent();
             NotificationsControl.DataContext = Notifications;
+            SetNotificationsLocation(location);
+        }
+
+        public void SetNotificationsLocation(NotificationLocation location)
+        {
             switch (location)
             {
                 case NotificationLocation.TopRight:
                     Top = 0;
-                    Left = SystemParameters.PrimaryScreenWidth -Width;
-                    NotificationsControl.VerticalAlignment= VerticalAlignment.Top;
+                    Left = SystemParameters.PrimaryScreenWidth - Width;
+                    NotificationsControl.VerticalAlignment = VerticalAlignment.Top;
                     break;
                 case NotificationLocation.BottonRight:
                     Top = SystemParameters.PrimaryScreenHeight - Height;
-                    Left = SystemParameters.PrimaryScreenWidth -Width;
-                    NotificationsControl.VerticalAlignment= VerticalAlignment.Bottom;
+                    Left = SystemParameters.PrimaryScreenWidth - Width;
+                    NotificationsControl.VerticalAlignment = VerticalAlignment.Bottom;
                     break;
                 case NotificationLocation.TopLeft:
                     Top = 0;

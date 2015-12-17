@@ -96,16 +96,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\facebook-button.png" />
+    <Resource Include="Resources\facebook-button.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\microsoft-windows-8-logo.png" />
+    <Resource Include="Resources\microsoft-windows-8-logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\notification-icon.png" />
+    <Resource Include="Resources\notification-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\Radiation_warning_symbol.png" />
+    <Resource Include="Resources\Radiation_warning_symbol.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
