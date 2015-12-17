@@ -40,6 +40,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=10.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.0.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -51,16 +55,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <DesignData Include="DesignTimeNotificationData.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </DesignData>
-    <Page Include="GrowlNotifiactions.xaml">
+    <Page Include="GrowlNotifications.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="GrowlNotifiactions.xaml.cs">
-      <DependentUpon>GrowlNotifiactions.xaml</DependentUpon>
+    <Compile Include="GrowlNotifications.xaml.cs">
+      <DependentUpon>GrowlNotifications.xaml</DependentUpon>
     </Compile>
     <Compile Include="Notification.cs" />
     <Page Include="Resources\ButtonStyle.xaml">
@@ -87,17 +87,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\facebook-button.png" />
-    <Resource Include="Resources\microsoft-windows-8-logo.png" />
-    <Resource Include="Resources\notification-icon.png" />
-    <Resource Include="Resources\Radiation_warning_symbol.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\close.png" />

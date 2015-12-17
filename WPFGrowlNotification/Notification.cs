@@ -5,54 +5,54 @@ namespace WPFGrowlNotification
 {
     public class Notification : INotifyPropertyChanged
     {
-        private string message;
+        private string _message;
         public string Message
         {
-            get { return message; }
+            get { return _message; }
 
             set
             {
-                if (message == value) return;
-                message = value;
+                if (_message == value) return;
+                _message = value;
                 OnPropertyChanged("Message");
             }
         }
 
-        private int id;
+        private int _id;
         public int Id
         {
-            get { return id; }
+            get { return _id; }
 
             set
             {
-                if (id == value) return;
-                id = value;
+                if (_id == value) return;
+                _id = value;
                 OnPropertyChanged("Id");
             }
         }
 
-        private string imageUrl;
+        private string _imageUrl;
         public string ImageUrl
         {
-            get { return imageUrl; }
+            get { return _imageUrl; }
 
             set
             {
-                if (imageUrl == value) return;
-                imageUrl = value;
+                if (_imageUrl == value) return;
+                _imageUrl = value;
                 OnPropertyChanged("ImageUrl");
             }
         }
 
-        private string title;
+        private string _title;
         public string Title
         {
-            get { return title; }
+            get { return _title; }
 
             set
             {
-                if (title == value) return;
-                title = value;
+                if (_title == value) return;
+                _title = value;
                 OnPropertyChanged("Title");
             }
         }
