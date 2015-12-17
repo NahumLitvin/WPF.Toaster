@@ -24,7 +24,10 @@ namespace WPFGrowlNotification
         {
             var uri = new Uri("pack://application:,,,/Resources/notification-icon.png");
             var bitmap = new BitmapImage(uri);
-            _growlNotifications.AddNotification(new Notification { Title = "Mesage #1", Image = bitmap, Message = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." });
+            _growlNotifications.AddNotification(new Notification { Title = "Mesage #1",
+                Image = bitmap,
+                Message = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            });
        
         }
 

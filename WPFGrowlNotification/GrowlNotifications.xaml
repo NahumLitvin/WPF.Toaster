@@ -11,7 +11,7 @@
         </Storyboard>
         <DataTemplate x:Key="MessageTemplate" DataType="model:Notification">
             <Grid x:Name="NotificationWindow" Tag="{Binding Path=Id}" Background="Transparent" SizeChanged="NotificationWindowSizeChanged">
-                <Border Name="border" Background="#2a3345" BorderThickness="0" CornerRadius="10" Margin="10">
+                <Border Name="border" Background="{Binding BackgroundColor}" BorderThickness="0" CornerRadius="10" Margin="10">
                     <Border.Effect>
                         <DropShadowEffect ShadowDepth="0" Opacity="0.8" BlurRadius="10"/>
                     </Border.Effect>
@@ -25,7 +25,7 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Image Grid.RowSpan="2" Source="{Binding Path=Image}" Margin="4" Width="80"></Image>
-                        <TextBlock Grid.Column="1" Text="{Binding Path=Title}"  TextOptions.TextRenderingMode="ClearType" TextOptions.TextFormattingMode="Display" Foreground="White" 
+                        <TextBlock Grid.Column="1" Text="{Binding Path=Title}"  TextOptions.TextRenderingMode="ClearType" TextOptions.TextFormattingMode="Display" Foreground= "{Binding TitleColor}"
                                    FontFamily="Arial" FontSize="14" FontWeight="Bold" VerticalAlignment="Center"  Margin="2,4,4,2" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" />
                         <Button x:Name="CloseButton" Grid.Column="1" Width="16" Height="16" HorizontalAlignment="Right" Margin="0,0,12,0" Style="{StaticResource CloseButton}" />
                         <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Message}"  TextOptions.TextRenderingMode="ClearType" TextOptions.TextFormattingMode="Display" Foreground="White" 
@@ -73,5 +73,5 @@
        </ResourceDictionary>
 
     </Window.Resources>
-    <ItemsControl x:Name="NotificationsControl" FocusVisualStyle="{x:Null}" ItemsSource="{Binding .}" ItemTemplate="{StaticResource MessageTemplate}" />
+    <ItemsControl x:Name="NotificationsControl" FocusVisualStyle="{x:Null}" ItemsSource="{Binding .}" d:DataContext="" ItemTemplate="{StaticResource MessageTemplate}" />
 </Window>

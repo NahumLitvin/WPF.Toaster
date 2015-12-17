@@ -1,11 +1,18 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace WPFGrowlNotification
 {
     public class Notification : INotifyPropertyChanged
     {
+        public Notification()
+        {
+            BackgroundColor = new SolidColorBrush(Color.FromRgb(0x2a,0x33,0x45));
+            TitleColor = new SolidColorBrush(Colors.White);
+            TextColor = new SolidColorBrush(Colors.White);
+        }
         private string _message;
         public string Message
         {
@@ -39,7 +46,7 @@ namespace WPFGrowlNotification
 
             set
             {
-                if (_image == value) return;
+                if (Equals(_image, value)) return;
                 _image = value;
                 OnPropertyChanged("Image");
             }
@@ -58,6 +65,9 @@ namespace WPFGrowlNotification
             }
         }
 
+        public Brush BackgroundColor { get; set; }
+        public Brush TitleColor { get; set; }
+        public Brush TextColor { get; set; }
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
