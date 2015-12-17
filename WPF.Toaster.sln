@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFGrowlNotification", "WPFGrowlNotification\WPFGrowlNotification.csproj", "{6995ABFD-720F-41E7-BE8B-38F23BA4BB57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.Toaster", "WPFGrowlNotification\WPF.Toaster.csproj", "{6995ABFD-720F-41E7-BE8B-38F23BA4BB57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfToastTester", "WpfToastTester\WpfToastTester.csproj", "{FDD5553D-98B3-4896-9399-5EC1C820FBB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.Toaster.Test", "WpfToastTester\WPF.Toaster.Test.csproj", "{FDD5553D-98B3-4896-9399-5EC1C820FBB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

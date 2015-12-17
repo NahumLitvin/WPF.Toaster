@@ -2,22 +2,21 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using JetBrains.Annotations;
 
-namespace WPFGrowlNotification
+namespace WPF.Toaster
 {
-    [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-    public partial class GrowlNotifications
+
+    public partial class Toasts
     {
         private const byte MaxNotifications = 4;
         private int _count;
-        public Notifications Notifications = new Notifications();
-        private readonly Notifications _buffer = new Notifications();
+        public ToastsCollection ToastsCollection = new ToastsCollection();
+        private readonly ToastsCollection _buffer = new ToastsCollection();
 
-        public GrowlNotifications(NotificationLocation location = NotificationLocation.BottonRight)
+        public Toasts(NotificationLocation location = NotificationLocation.BottonRight)
         {
             InitializeComponent();
-            NotificationsControl.DataContext = Notifications;
+            NotificationsControl.DataContext = ToastsCollection;
             SetNotificationsLocation(location);
         }
 
@@ -50,40 +49,40 @@ namespace WPFGrowlNotification
             }
         }
 
-        public void AddNotification(Notification notification)
+        public void AddNotification(Toast toast)
         {
-            notification.Id = _count++;
-            if (Notifications.Count + 1 > MaxNotifications)
+            toast.Id = _count++;
+            if (ToastsCollection.Count + 1 > MaxNotifications)
             {
-                _buffer.Add(notification);
+                _buffer.Add(toast);
             }
             else
             {
-                Notifications.Add(notification);
+                ToastsCollection.Add(toast);
             }
 
             //Show window if there're notifications
-            if (Notifications.Count > 0 && !IsActive)
+            if (ToastsCollection.Count > 0 && !IsActive)
             {
                 Show();
             }
         }
 
-        public void RemoveNotification(Notification notification)
+        public void RemoveNotification(Toast toast)
         {
-            if (Notifications.Contains(notification))
+            if (ToastsCollection.Contains(toast))
             {
-                Notifications.Remove(notification);
+                ToastsCollection.Remove(toast);
             }
 
             if (_buffer.Count > 0)
             {
-                Notifications.Add(_buffer[0]);
+                ToastsCollection.Add(_buffer[0]);
                 _buffer.RemoveAt(0);
             }
 
             //Close window if there's nothing to show
-            if (Notifications.Count < 1)
+            if (ToastsCollection.Count < 1)
             {
                 Hide();
             }
@@ -96,7 +95,7 @@ namespace WPFGrowlNotification
                 return;
             }
             var element = sender as Grid;
-            RemoveNotification(Notifications.First(n => n.Id == int.Parse(element.Tag.ToString())));
+            RemoveNotification(ToastsCollection.First(n => n.Id == int.Parse(element.Tag.ToString())));
         }
     }
 
