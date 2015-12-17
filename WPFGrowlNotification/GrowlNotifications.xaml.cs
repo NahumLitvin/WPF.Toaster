@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 
 namespace WPFGrowlNotification
 {
-    [UsedImplicitly]
+    [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
     public partial class GrowlNotifications
     {
         private const byte MaxNotifications = 4;
