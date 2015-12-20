@@ -13,4 +13,4 @@ Requirements
 ----------------------------------
 Tested on Visaul Studio 2013 with .Net 4.5 On Windows 7
 
-[example image]: "http://s30.postimg.org/8dp78erip/Untitled.png" "Example Image"
+[exampleimage]: "http://s30.postimg.org/8dp78erip/Untitled.png" "Example Image"
