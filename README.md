@@ -13,4 +13,4 @@ Requirements
 ----------------------------------
 Tested on Visaul Studio 2013 with .Net 4.5 On Windows 7
 
-[exaMPLE]: (https://cloud.githubusercontent.com/assets/14837912/11917527/631fe884-a713-11e5-98ab-e80ffd405b7d.png) ""
+[example]: (https://cloud.githubusercontent.com/assets/14837912/11917527/631fe884-a713-11e5-98ab-e80ffd405b7d.png) ""
