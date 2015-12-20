@@ -14,3 +14,20 @@ Requirements
 Tested on Visaul Studio 2013 with .Net 4.5 On Windows 7
 
 ![Image of Yaktocat](https://cloud.githubusercontent.com/assets/14837912/11917527/631fe884-a713-11e5-98ab-e80ffd405b7d.png)
+```c#
+            _toastsManager = new ToastsManager(NotificationLocation.TopRight);
+            var uri = new Uri("pack://application:,,,/Resources/notification-icon.png");
+            var bitmap = new BitmapImage(uri);
+            _toastsManager.AddNotification(new Toaster.Toast
+            {
+                Title = "Mesage #1",
+                Image = bitmap,
+                Message = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                ,
+                TextColor = Colors.Green
+                ,
+                SubTitle = "SubTitleText"
+                ,
+                BackgroundColor = Colors.NavajoWhite
+            });
+```
