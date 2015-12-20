@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>WPF.Toaster</id>
+        <version>1.0.3</version>
+        <title>Wpf Toast notifications Library</title>
+        <authors>Nahum Litvin</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>
+		Wpf Toast Notifications Library.		
+		https://github.com/NahumLitvin/WPFGrowlNotification		
+		</description>
+    </metadata>
+    <files>
+        <file src="bin\Release\WPF.Toaster.dll" target="lib\net45\WPF.Toaster.dll" />
+        <file src="bin\Release\WPF.Toaster.pdb" target="lib\net45\WPF.Toaster.pdb" />
+    </files>
+</package>

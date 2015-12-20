@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using JetBrains.Annotations;
@@ -14,9 +15,10 @@ namespace WPF.Toaster
     {
         public Toast()
         {
-            BackgroundColor = new SolidColorBrush(Color.FromRgb(0x2a,0x33,0x45));
-            TitleColor = new SolidColorBrush(Colors.White);
-            TextColor = new SolidColorBrush(Colors.White);
+            TitleColor = Colors.White;
+            SubtitleColor = Colors.CornflowerBlue;
+            TextColor = Colors.White;
+            BackgroundColor = Color.FromRgb(0x2a, 0x33, 0x45);  
         }
         private string _message;
         public string Message
@@ -70,9 +72,29 @@ namespace WPF.Toaster
             }
         }
 
-        public Brush BackgroundColor { get; set; }
-        public Brush TitleColor { get; set; }
-        public Brush TextColor { get; set; }
+        private string _subTitle;
+        public string SubTitle
+        {
+            get { return _subTitle; }
+
+            set
+            {
+                if (_subTitle == value) return;
+                _subTitle = value;
+                OnPropertyChanged("SubTitle");
+            }
+        }
+
+        public Color BackgroundColor { get; set; }
+
+        public Color TitleColor { get; set; }
+
+        public Color SubtitleColor { get; set; }
+
+        public Color TextColor { get; set; }
+
+        public ICommand Command { get; set; }
+
 
         protected  void OnPropertyChanged(string propertyName)
         {

@@ -51,11 +51,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Toasts.xaml.cs">
-      <DependentUpon>Toasts.xaml</DependentUpon>
+    <Compile Include="ColorToSolidColorBrushValueConverter.cs" />
+    <Compile Include="ToastsManager.xaml.cs">
+      <DependentUpon>ToastsManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToastsCollection.cs" />
-    <Page Include="Toasts.xaml">
+    <Page Include="ToastsManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -86,11 +87,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="WPF.Toaster.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\close.png" />

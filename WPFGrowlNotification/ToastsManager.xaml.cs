@@ -6,14 +6,14 @@ using System.Windows.Controls;
 namespace WPF.Toaster
 {
 
-    public partial class Toasts
+    public partial class ToastsManager
     {
         private const byte MaxNotifications = 4;
         private int _count;
         public ToastsCollection ToastsCollection = new ToastsCollection();
         private readonly ToastsCollection _buffer = new ToastsCollection();
 
-        public Toasts(NotificationLocation location = NotificationLocation.BottonRight)
+        public ToastsManager(NotificationLocation location = NotificationLocation.BottonRight)
         {
             InitializeComponent();
             NotificationsControl.DataContext = ToastsCollection;
